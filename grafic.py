@@ -1,0 +1,1 @@
+#aca tendriamos q inicializar los gaficos, pero nose como hacerlo :(
