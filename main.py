@@ -1,6 +1,7 @@
 import pygame
 from game import Game
 
+
 pygame.init()  # Inicializar Pygame
 
 if __name__ == "__main__":

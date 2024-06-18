@@ -33,14 +33,21 @@ class Graficos:
 
     def mostrar_pregunta(self, pregunta, opciones):
         self.ventana.blit(self.escenario, (0, 0))  # Dibujar la imagen del escenario en la ventana
-        texto_pregunta = self.fuente.render(pregunta, True, NEGRO)  # Texto de la pregunta
-        self.ventana.blit(texto_pregunta, (100, 100))  # Mostrar pregunta
 
-        texto_opcion_rojo = self.fuente.render(f"Rojo: {opciones[0]}", True, ROJO)  # Texto opción rojo
-        texto_opcion_azul = self.fuente.render(f"Azul: {opciones[1]}", True, AZUL)  # Texto opción azul
+        # Mostrar pregunta en la pantalla superior
+        texto_pregunta = self.fuente.render(pregunta, True, NEGRO)
+        pregunta_rect = texto_pregunta.get_rect(center=(411, 200))  # Ajustar según la posición de la pantalla superior
+        self.ventana.blit(texto_pregunta, pregunta_rect.topleft)
 
-        self.ventana.blit(texto_opcion_rojo, (100, 200))  # Mostrar opción roja
-        self.ventana.blit(texto_opcion_azul, (100, 300))  # Mostrar opción azul
+        # Mostrar opción roja en la pantalla izquierda
+        texto_opcion_rojo = self.fuente.render(f"Rojo: {opciones[0]}", True, ROJO)
+        opcion_rojo_rect = texto_opcion_rojo.get_rect(center=(150, 250))  # Ajustar según la posición de la pantalla izquierda
+        self.ventana.blit(texto_opcion_rojo, opcion_rojo_rect.topleft)
+
+        # Mostrar opción azul en la pantalla derecha
+        texto_opcion_azul = self.fuente.render(f"Azul: {opciones[1]}", True, AZUL)
+        opcion_azul_rect = texto_opcion_azul.get_rect(center=(600, 250))  # Ajustar según la posición de la pantalla derecha
+        self.ventana.blit(texto_opcion_azul, opcion_azul_rect.topleft)
 
         pygame.display.update()  # Actualizar pantalla
 
