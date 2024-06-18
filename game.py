@@ -43,7 +43,6 @@ class Game:
                 for evento in pygame.event.get():
                     if evento.type == pygame.QUIT:  # Si se cierra la ventana
                         pygame.quit()
-                        sys.exit()
                         return
                     if evento.type == pygame.KEYDOWN:  # Si se presiona una tecla
                         if evento.key == pygame.K_r:
