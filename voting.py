@@ -1,5 +1,6 @@
 import random
 import pygame
+
 votantes = ["Votante 1", "Votante 2", "Votante 3", "Votante 4", "Votante 5"]
 
 def generar_votos():
@@ -10,4 +11,4 @@ def mostrar_2_votos(votos, ventana, fuente):
     for i in indices:
         texto_voto = fuente.render(f"{votantes[i]} votó: {votos[i]}", True, (0, 0, 0))
         ventana.blit(texto_voto, (100, 400 + 50 * i))
-    pygame.display.update() #nose porque no funciona, mas tarde revisar
+    pygame.display.update()

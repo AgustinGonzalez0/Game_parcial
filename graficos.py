@@ -1,0 +1,56 @@
+import pygame
+
+# Definir colores
+NEGRO = (0, 0, 0)
+ROJO = (255, 0, 0)
+AZUL = (0, 0, 255)
+AZUL_CLARO = (0, 150, 255)
+BLANCO = (255, 255, 255)
+
+class Graficos:
+    def __init__(self, ventana, fuente):
+        self.ventana = ventana  # Ventana del juego
+        self.fuente = fuente  # Fuente para el texto
+        self.escenario = pygame.image.load('_829b3046-c7bc-481e-b6fa-1d5eb27da4fd.png')  # Cargar imagen del escenario
+        self.escenario = pygame.transform.scale(self.escenario, (800, 600))  # Escalar la imagen al tamaño de la ventana
+
+    def mostrar_grafico(self, votos):
+        total = len(votos)  # Total de votos
+        votos_rojo = votos.count("Rojo")  # Votos para "Rojo"
+        votos_azul = votos.count("Azul")  # Votos para "Azul"
+        porcentaje_rojo = (votos_rojo / total) * 100  # Porcentaje de votos para "Rojo"
+        porcentaje_azul = (votos_azul / total) * 100  # Porcentaje de votos para "Azul"
+
+        # Dibujar el gráfico
+        pygame.draw.rect(self.ventana, ROJO, (150, 500, 200, 30))  # Rectángulo rojo
+        pygame.draw.rect(self.ventana, AZUL, (450, 500, 200, 30))  # Rectángulo azul
+
+        texto_rojo = self.fuente.render(f"Rojo: {porcentaje_rojo:.2f}%", True, BLANCO)  # Texto del porcentaje rojo
+        texto_azul = self.fuente.render(f"Azul: {porcentaje_azul:.2f}%", True, BLANCO)  # Texto del porcentaje azul
+
+        self.ventana.blit(texto_rojo, (150, 500))  # Mostrar texto rojo
+        self.ventana.blit(texto_azul, (450, 500))  # Mostrar texto azul
+
+    def mostrar_pregunta(self, pregunta, opciones):
+        self.ventana.blit(self.escenario, (0, 0))  # Dibujar la imagen del escenario en la ventana
+        texto_pregunta = self.fuente.render(pregunta, True, NEGRO)  # Texto de la pregunta
+        self.ventana.blit(texto_pregunta, (100, 100))  # Mostrar pregunta
+
+        texto_opcion_rojo = self.fuente.render(f"Rojo: {opciones[0]}", True, ROJO)  # Texto opción rojo
+        texto_opcion_azul = self.fuente.render(f"Azul: {opciones[1]}", True, AZUL)  # Texto opción azul
+
+        self.ventana.blit(texto_opcion_rojo, (100, 200))  # Mostrar opción roja
+        self.ventana.blit(texto_opcion_azul, (100, 300))  # Mostrar opción azul
+
+        pygame.display.update()  # Actualizar pantalla
+
+    def crear_boton(self, texto, color, posicion, tamano):
+        boton = pygame.Rect(*posicion, *tamano)  # Crear rectángulo para el botón
+        pygame.draw.rect(self.ventana, color, boton)  # Dibujar botón
+        texto_boton = self.fuente.render(texto, True, BLANCO)  # Crear texto del botón
+        self.ventana.blit(texto_boton, (posicion[0] + 10, posicion[1] + 10))  # Mostrar texto del botón
+        return boton  # Retornar el rectángulo del botón para detección de clics
+
+    def mostrar_escenario(self):
+        self.ventana.blit(self.escenario, (0, 0))  # Dibujar la imagen del escenario en la ventana
+        pygame.display.update()  # Actualizar pantalla
