@@ -13,7 +13,7 @@ class Game:
         self.comodines_usados = {"Next": False, "Half": False, "Reload": False}  # Estado de uso de comodines
         self.nivel = 0  # Nivel actual
         self.premio = 0  # Premio acumulado
-        self.tiempo_maximo = 15  # Tiempo máximo para responder
+        self.tiempo_maximo = 100  # Tiempo máximo para responder
         self.banco_preguntas = obtener_preguntas()  # Obtener banco de preguntas
 
     def usar_comodin(self, comodin, votos):
@@ -43,6 +43,7 @@ class Game:
                 for evento in pygame.event.get():
                     if evento.type == pygame.QUIT:  # Si se cierra la ventana
                         pygame.quit()
+                        sys.exit()
                         return
                     if evento.type == pygame.KEYDOWN:  # Si se presiona una tecla
                         if evento.key == pygame.K_r:
