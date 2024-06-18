@@ -11,8 +11,10 @@ class Graficos:
     def __init__(self, ventana, fuente):
         self.ventana = ventana  # Ventana del juego
         self.fuente = fuente  # Fuente para el texto
-        self.escenario = pygame.image.load('_829b3046-c7bc-481e-b6fa-1d5eb27da4fd.png')  # Cargar imagen del escenario
+        self.escenario = pygame.image.load('Game_parcial/_829b3046-c7bc-481e-b6fa-1d5eb27da4fd.png')  # Cargar imagen del escenario
         self.escenario = pygame.transform.scale(self.escenario, (800, 600))  # Escalar la imagen al tamaño de la ventana
+        #self.vote_rojo = pygame.
+        #self.vote_azul = pygame.
 
     def mostrar_grafico(self, votos):
         total = len(votos)  # Total de votos
