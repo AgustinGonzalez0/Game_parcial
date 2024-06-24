@@ -1,0 +1,13 @@
+Notas de cambio "game.py":
+
+Se ha eliminado la estructura de clase y se ha cambiado a una estructura basada en 
+diccionarios para almacenar el estado del juego.
+
+Las funciones de graficos y otros módulos son utilizadas directamente pasando los datos 
+necesarios desde el diccionario game_data.
+
+La función start() gestiona el bucle principal del juego, manejando las decisiones del 
+usuario y la lógica del juego.
+
+Las variables y funciones relevantes son accedidas a través del diccionario game_data para 
+mantener el estado del juego de forma centralizada.

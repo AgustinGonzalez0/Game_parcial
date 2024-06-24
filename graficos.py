@@ -7,59 +7,56 @@ AZUL = (0, 0, 255)
 AZUL_CLARO = (0, 150, 255)
 BLANCO = (255, 255, 255)
 
-class Graficos:
-    def __init__(self, ventana, fuente):
-        self.ventana = ventana  # Ventana del juego
-        self.fuente = fuente  # Fuente para el texto
-        self.escenario = pygame.image.load('Game_parcial/_829b3046-c7bc-481e-b6fa-1d5eb27da4fd.png')  # Cargar imagen del escenario
-        self.escenario = pygame.transform.scale(self.escenario, (800, 600))  # Escalar la imagen al tamaño de la ventana
-        #self.vote_rojo = pygame.
-        #self.vote_azul = pygame.
+# Cargar y escalar la imagen del escenario
+escenario = pygame.image.load('_829b3046-c7bc-481e-b6fa-1d5eb27da4fd.png')
+escenario = pygame.transform.scale(escenario, (800, 600))
 
-    def mostrar_grafico(self, votos):
-        total = len(votos)  # Total de votos
-        votos_rojo = votos.count("Rojo")  # Votos para "Rojo"
-        votos_azul = votos.count("Azul")  # Votos para "Azul"
-        porcentaje_rojo = (votos_rojo / total) * 100  # Porcentaje de votos para "Rojo"
-        porcentaje_azul = (votos_azul / total) * 100  # Porcentaje de votos para "Azul"
+def mostrar_escenario(ventana):
+    ventana.blit(escenario, (0, 0))  # Dibujar la imagen del escenario en la ventana
+    pygame.display.update()  # Actualizar pantalla
 
-        # Dibujar el gráfico
-        pygame.draw.rect(self.ventana, ROJO, (150, 500, 200, 30))  # Rectángulo rojo
-        pygame.draw.rect(self.ventana, AZUL, (450, 500, 200, 30))  # Rectángulo azul
+def mostrar_grafico(ventana, fuente, votos):
+    total = len(votos)  # Total de votos
+    votos_rojo = votos.count("Rojo")  # Votos para "Rojo"
+    votos_azul = votos.count("Azul")  # Votos para "Azul"
+    porcentaje_rojo = (votos_rojo / total) * 100  # Porcentaje de votos para "Rojo"
+    porcentaje_azul = (votos_azul / total) * 100  # Porcentaje de votos para "Azul"
 
-        texto_rojo = self.fuente.render(f"Rojo: {porcentaje_rojo:.2f}%", True, BLANCO)  # Texto del porcentaje rojo
-        texto_azul = self.fuente.render(f"Azul: {porcentaje_azul:.2f}%", True, BLANCO)  # Texto del porcentaje azul
+    # Dibujar el gráfico
+    pygame.draw.rect(ventana, ROJO, (150, 500, 200, 30))  # Rectángulo rojo
+    pygame.draw.rect(ventana, AZUL, (450, 500, 200, 30))  # Rectángulo azul
 
-        self.ventana.blit(texto_rojo, (150, 500))  # Mostrar texto rojo
-        self.ventana.blit(texto_azul, (450, 500))  # Mostrar texto azul
+    texto_rojo = fuente.render(f"Rojo: {porcentaje_rojo:.2f}%", True, BLANCO)  # Texto del porcentaje rojo
+    texto_azul = fuente.render(f"Azul: {porcentaje_azul:.2f}%", True, BLANCO)  # Texto del porcentaje azul
 
-    def mostrar_pregunta(self, pregunta, opciones):
-        self.ventana.blit(self.escenario, (0, 0))  # Dibujar la imagen del escenario en la ventana
+    ventana.blit(texto_rojo, (150, 500))  # Mostrar texto rojo
+    ventana.blit(texto_azul, (450, 500))  # Mostrar texto azul
+    pygame.display.update()  # Actualizar pantalla
 
-        # Mostrar pregunta en la pantalla superior
-        texto_pregunta = self.fuente.render(pregunta, True, NEGRO)
-        pregunta_rect = texto_pregunta.get_rect(center=(411, 200))  # Ajustar según la posición de la pantalla superior
-        self.ventana.blit(texto_pregunta, pregunta_rect.topleft)
+def mostrar_pregunta(ventana, fuente, pregunta, opciones):
+    ventana.blit(escenario, (0, 0))  # Dibujar la imagen del escenario en la ventana
 
-        # Mostrar opción roja en la pantalla izquierda
-        texto_opcion_rojo = self.fuente.render(f"Rojo: {opciones[0]}", True, ROJO)
-        opcion_rojo_rect = texto_opcion_rojo.get_rect(center=(150, 250))  # Ajustar según la posición de la pantalla izquierda
-        self.ventana.blit(texto_opcion_rojo, opcion_rojo_rect.topleft)
+    # Mostrar pregunta en la pantalla superior
+    texto_pregunta = fuente.render(pregunta, True, NEGRO)
+    pregunta_rect = texto_pregunta.get_rect(center=(400, 200))  # Ajustar según la posición de la pantalla superior
+    ventana.blit(texto_pregunta, pregunta_rect.topleft)
 
-        # Mostrar opción azul en la pantalla derecha
-        texto_opcion_azul = self.fuente.render(f"Azul: {opciones[1]}", True, AZUL)
-        opcion_azul_rect = texto_opcion_azul.get_rect(center=(600, 250))  # Ajustar según la posición de la pantalla derecha
-        self.ventana.blit(texto_opcion_azul, opcion_azul_rect.topleft)
+    # Mostrar opción roja en la pantalla izquierda
+    texto_opcion_rojo = fuente.render(f"{opciones[0]}", True, ROJO)
+    opcion_rojo_rect = texto_opcion_rojo.get_rect(center=(150, 250))  # Ajustar según la posición de la pantalla izquierda
+    ventana.blit(texto_opcion_rojo, opcion_rojo_rect.topleft)
 
-        pygame.display.update()  # Actualizar pantalla
+    # Mostrar opción azul en la pantalla derecha
+    texto_opcion_azul = fuente.render(f"{opciones[1]}", True, AZUL)
+    opcion_azul_rect = texto_opcion_azul.get_rect(center=(650, 250))  # Ajustar según la posición de la pantalla derecha
+    ventana.blit(texto_opcion_azul, opcion_azul_rect.topleft)
 
-    def crear_boton(self, texto, color, posicion, tamano):
-        boton = pygame.Rect(*posicion, *tamano)  # Crear rectángulo para el botón
-        pygame.draw.rect(self.ventana, color, boton)  # Dibujar botón
-        texto_boton = self.fuente.render(texto, True, BLANCO)  # Crear texto del botón
-        self.ventana.blit(texto_boton, (posicion[0] + 10, posicion[1] + 10))  # Mostrar texto del botón
-        return boton  # Retornar el rectángulo del botón para detección de clics
+    pygame.display.update()  # Actualizar pantalla
 
-    def mostrar_escenario(self):
-        self.ventana.blit(self.escenario, (0, 0))  # Dibujar la imagen del escenario en la ventana
-        pygame.display.update()  # Actualizar pantalla
+def crear_boton(ventana, fuente, texto, color, rect):
+    pygame.draw.rect(ventana, color, rect)  # Dibujar el rectángulo del botón
+    texto_boton = fuente.render(texto, True, BLANCO)  # Renderizar el texto del botón
+    texto_rect = texto_boton.get_rect(center=((rect[0] + rect[2] / 2), (rect[1] + rect[3] / 2)))  # Posición del texto en el botón
+    ventana.blit(texto_boton, texto_rect)  # Dibujar el texto del botón
+    pygame.display.update()  # Actualizar pantalla
+    return pygame.Rect(rect)  # Devolver el rectángulo del botón
