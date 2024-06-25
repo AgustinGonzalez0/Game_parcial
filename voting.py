@@ -4,7 +4,7 @@ import pygame
 votantes = ["Votante 1", "Votante 2", "Votante 3", "Votante 4", "Votante 5"]
 
 def generar_votos():
-    return [random.choice(["Rojo", "Azul"]) for _ in range(len(votantes))] #cambiemos esto, es para ir mejorando 
+    return [random.choice(["Rojo", "Azul"]) for _ in range(len(votantes))]
 
 def mostrar_2_votos(votos, ventana, fuente):
     indices = random.sample(range(len(votantes)), 2)

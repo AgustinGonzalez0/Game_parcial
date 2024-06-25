@@ -1,70 +1,78 @@
-#import pygame
-#import sys
-#import time
+import sys
+import pygame
+import time
 
 # Inicializar Pygame
-
+pygame.init()
 
 # Definir colores
-#WHITE = (255, 255, 255)
-#BLACK = (0, 0, 0)
-#GREEN = (0, 255, 0)
-#RED = (255, 0, 0)
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+GREEN = (0, 255, 0)
+RED = (255, 0, 0)
 
 # Configurar la pantalla
-
+screen = pygame.display.set_mode((800, 600))
+pygame.display.set_caption("Animación de Votos")
 
 # Fuente para el texto del botón
-#font = pygame.font.Font(None, 36)
+font = pygame.font.Font(None, 36)
 
 # Cargar las imágenes para la animación
-#voto_azul_paths = (
-#    "programacion_posta/voto_azul/vote_azul(1).png",
-#    "programacion_posta/voto_azul/vote_azul(2).png",
-#    "programacion_posta/voto_azul/vote_azul(3).png",
-#    "programacion_posta/voto_azul/vote_azul(4).png"
-#)
-#voto_azul = [pygame.image.load(path) for path in voto_azul_paths]
+voto_azul_paths = (
+    "vote_azul(1).png",
+    "vote_azul(2).png",
+    "vote_azul(3).png",
+    "vote_azul(4).png"
+)
+voto_azul = [pygame.image.load(path) for path in voto_azul_paths]
 
 # Definir el rectángulo del botón
-#button_rect = pygame.Rect(300, 250, 200, 50)
+button_rect = pygame.Rect(300, 250, 200, 50)
 
-#def draw_button(screen, color, rect, text):
-#    pygame.draw.rect(screen, color, rect)
-#    text_surf = font.render(text, True, BLACK)
-#    text_rect = text_surf.get_rect(center=rect.center)
-#    screen.blit(text_surf, text_rect)
+def draw_button(screen, color, rect, text):
+    pygame.draw.rect(screen, color, rect)
+    text_surf = font.render(text, True, BLACK)
+    text_rect = text_surf.get_rect(center=rect.center)
+    screen.blit(text_surf, text_rect)
 
-#def main():
-#    running = True
+def mostrar_animacion_azul(screen):
+    for i in range(5):  # Mostrar la animación 5 veces
+        for frame in voto_azul:
+            screen.blit(frame, (100 + i * 140, 450))
+            pygame.display.update()
+            time.sleep(0.1)
 
-#    while running:
-#        screen.fill(WHITE)
-#        for event in pygame.event.get():
-#            if event.type == pygame.QUIT:
-#                running = False
-#            elif event.type == pygame.MOUSEBUTTONDOWN:
-#                if button_rect.collidepoint(event.pos):
-#                    print("Botón presionado!")
+def main():
+    running = True
+
+    while running:
+        screen.fill(WHITE)
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                if button_rect.collidepoint(event.pos):
+                    print("Botón presionado!")
 
         # Animación
-#        frame = int(time.time() * 5) % len(voto_azul)
-#        screen.blit(voto_azul[frame], (100, 100))
+        frame = int(time.time() * 5) % len(voto_azul)
+        screen.blit(voto_azul[frame], (100, 100))
 
         # Detección del mouse para cambiar el color del botón
-#        mouse_pos = pygame.mouse.get_pos()
-#        if button_rect.collidepoint(mouse_pos):
-#            button_color = GREEN
-#        else:
-#            button_color = RED
+        mouse_pos = pygame.mouse.get_pos()
+        if button_rect.collidepoint(mouse_pos):
+            button_color = GREEN
+        else:
+            button_color = RED
 
         # Dibujar el botón
-#        draw_button(screen, button_color, button_rect, "Click Me")
+        draw_button(screen, button_color, button_rect, "Click Me")
 
- #       pygame.display.flip()
+        pygame.display.flip()
 
- #   pygame.quit()
- #   sys.exit()
+    pygame.quit()
+    sys.exit()
 
-#if __name__ == "__main__":
-#    main()
+if __name__ == "__main__":
+    main()
