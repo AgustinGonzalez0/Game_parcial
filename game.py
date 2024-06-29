@@ -1,9 +1,10 @@
 import pygame
 import time
-from questions import obtener_preguntas
+from questions import *
 from voting import generar_votos, mostrar_2_votos
 import graficos
-from animaciones import mostrar_animacion_azul # Importar las funciones de animación
+from animaciones import mostrar_animacion_azul, mostrar_animacion_roja
+import random
 
 # Inicializar Pygame
 pygame.init()
@@ -33,6 +34,14 @@ def usar_comodin(comodin, votos):
         return True, generar_votos()
     return False, votos
 
+def mostrar_2_votos(votos, ventana, fuente):
+    indices = random.sample(range(len(votos)), 2)
+    respuestas_seleccionadas = [votos[i] for i in indices]
+    texto = f"Panel: {respuestas_seleccionadas[0]}, {respuestas_seleccionadas[1]}"
+    texto_superficie = fuente.render(texto, True, (255, 255, 255))
+    ventana.blit(texto_superficie, (50, 550))
+    pygame.display.update()
+
 def start():
     graficos.mostrar_escenario(game_data['ventana'])  # Mostrar el escenario inicial
 
@@ -58,7 +67,7 @@ def start():
                     pygame.quit()
                     return
 
-                if evento.type == pygame.MOUSEBUTTONDOWN:
+                if evento.type == pygame.MOUSEBUTTONDOWN: #no vatiables glob (ninguna), minificar la funcion
                     if boton_rojo.collidepoint(evento.pos):  # Verificar si se hizo clic en el botón rojo
                         decision = "Rojo"
                     elif boton_azul.collidepoint(evento.pos):  # Verificar si se hizo clic en el botón azul
@@ -77,6 +86,7 @@ def start():
                             votos = generar_votos()
                             graficos.mostrar_pregunta(game_data['ventana'], game_data['fuente'], pregunta_actual["pregunta"], pregunta_actual["opciones"])
                             graficos.mostrar_grafico(game_data['ventana'], game_data['fuente'], votos)
+                            inicio_tiempo = time.time()  # Reiniciar el tiempo de inicio de la pregunta
 
             if decision:
                 break
@@ -91,27 +101,28 @@ def start():
             continue
         elif decision == "Half" or decision == "Reload":
             continue
-        elif decision in ["Rojo", "Azul"]:
-            respuesta_correcta = max(set(votos), key=votos.count)  # Determinar la opción más votada
+        elif decision in ["Rojo", "Azul"]: #cambiar el "in"
+            respuesta_correcta = max(set(votos), key=votos.count)  # Determinar la opción más votada, cambiar el max
 
             # Mostrar la animación correspondiente
-            #agregar aca la animacion roja con lo siguiente = if decision == "Roja":
-            if decision == "Azul": #pasas la animacion azul a elif
+            if decision == "Rojo":
+                mostrar_animacion_roja(game_data['ventana'])
+            elif decision == "Azul":
                 mostrar_animacion_azul(game_data['ventana'])
 
             # Mostrar los porcentajes de votos
             graficos.mostrar_grafico(game_data['ventana'], game_data['fuente'], votos, mostrar_porcentajes=True)
-            time.sleep(5)  # Mostrar resultados por 5 segundos
+            time.sleep(3)  # Mostrar resultados por 3 segundos
 
             if decision == respuesta_correcta:
                 print("¡Correcto!")
                 game_data['nivel'] += 1
                 game_data['premio'] += game_data['premios'][game_data['nivel'] - 1]
             else:
-                print("Incorrecto. Fin del juego.")
+                print("Perdiste JAJA")
                 break
         else:
-            print("Opción inválida. Fin del juego.")
+            print("¿cómo le hiciste?")
             break
 
         print(f"Premio total: ${game_data['premio']}")
