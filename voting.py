@@ -1,14 +1,36 @@
 import random
 import pygame
+from animaciones import mostrar_animacion_azul, mostrar_animacion_roja
 
-votantes = ["Votante 1", "Votante 2", "Votante 3", "Votante 4", "Votante 5"]
+posicion_1 = (150, 500)
+posicion_2 = (250, 500)
+posicion_3 = (350, 500)
+posicion_4 = (450, 500)
+posicion_5 = (575, 500)
+posiciones = [posicion_1, posicion_2, posicion_3, posicion_4, posicion_5]
 
-def generar_votos():
-    return [random.choice(["Rojo", "Azul"]) for _ in range(len(votantes))]
+votantes = [
+    {"nombre": "votante 1", "decision": None},
+    {"nombre": "votante 2", "decision": None},
+    {"nombre": "votante 3", "decision": None},
+    {"nombre": "votante 4", "decision": None},
+    {"nombre": "votante 5", "decision": None},
+]
+
+def generar_votos_con_posiciones():
+    votos = [random.choice(["Rojo", "Azul"]) for _ in range(len(votantes))]
+    return votos, posiciones[:len(votos)]
 
 def mostrar_2_votos(votos, ventana, fuente):
-    indices = random.sample(range(len(votantes)), 2)
-    for i in indices:
-        texto_voto = fuente.render(f"{votantes[i]} votó: {votos[i]}", True, (0, 0, 0))
-        ventana.blit(texto_voto, (100, 400 + 50 * i))
+    texto = f"Rojo: {votos.count('Rojo')}, Azul: {votos.count('Azul')}"
+    print(texto)  # Añadir impresión de depuración
+    texto_votos = fuente.render(texto, True, (0, 0, 0))
+    ventana.blit(texto_votos, (100, 100))
     pygame.display.update()
+
+def mostrar_animacion_votos(votantes, ventana):
+    for i, votante in enumerate(votantes):
+        if votante['decision'] == "Azul":
+            mostrar_animacion_azul(ventana, posiciones[i])
+        else:
+            mostrar_animacion_roja(ventana, posiciones[i])

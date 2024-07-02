@@ -1,7 +1,7 @@
 import sys
-from timeit import main
 import pygame
 import time
+from voting import *
 
 # Inicializar Pygame
 pygame.init()
@@ -21,16 +21,16 @@ font = pygame.font.Font(None, 36)
 
 # Cargar las imágenes para la animación
 voto_azul_paths = [
-    "vote_azul(1).png",
-    "vote_azul(2).png",
-    "vote_azul(3).png",
-    "vote_azul(4).png"
+    "bandera azul/vote_azul(1).png",
+    "bandera azul/vote_azul(2).png",
+    "bandera azul/vote_azul(3).png",
+    "bandera azul/vote_azul(4).png"
 ]
 voto_rojo_paths = [
-    "vote_rojo(1).png",
-    "vote_rojo(2).png",
-    "vote_rojo(3).png",
-    "vote_rojo(4).png"
+    "bandera roja/vote_rojo(1).png",
+    "bandera roja/vote_rojo(2).png",
+    "bandera roja/vote_rojo(3).png",
+    "bandera roja/vote_rojo(4).png"
 ]
 
 voto_azul = [pygame.image.load(path) for path in voto_azul_paths]
@@ -45,29 +45,18 @@ def draw_button(screen, color, rect, text):
     text_rect = text_surf.get_rect(center=rect.center)
     screen.blit(text_surf, text_rect)
 
-def mostrar_animacion_azul(screen):
-    while True:
-        for _ in range(5):
-            frame = int(time.time() * 5) % len(voto_azul)
-            screen.blit(voto_azul[frame], (575, 500))
-            screen.blit(voto_azul[frame], (450, 500))
-            screen.blit(voto_azul[frame], (350, 500))
-            screen.blit(voto_azul[frame], (250, 500))
-            screen.blit(voto_azul[frame], (150, 500))
-            pygame.display.update()
-            time.sleep(0.1)
-        break
+def mostrar_animacion_azul(screen, posiciones):
+    for _ in range(5):  # Mostrar 5 ciclos de animación
+        frame = int(time.time() * 5) % len(voto_azul)
+        for posicion in posiciones:
+            screen.blit(voto_azul[frame], posiciones)
+        pygame.display.update()
+        time.sleep(0.1)
 
-def mostrar_animacion_roja(screen):
+def mostrar_animacion_roja(screen, posiciones):
     for _ in range(5):  # Mostrar 5 ciclos de animación
         frame = int(time.time() * 5) % len(voto_rojo)
-        screen.blit(voto_rojo[frame], (575, 500))
-        screen.blit(voto_rojo[frame], (450, 500))
-        screen.blit(voto_rojo[frame], (350, 500))
-        screen.blit(voto_rojo[frame], (250, 500))
-        screen.blit(voto_rojo[frame], (150, 500))
+        for posicion in posiciones:
+            screen.blit(voto_rojo[frame], posiciones)
         pygame.display.update()
-        time.sleep(0.1) 
-
-if __name__ == "__main__":
-    main()
+        time.sleep(0.1)

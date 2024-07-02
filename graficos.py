@@ -15,7 +15,11 @@ def mostrar_escenario(ventana):
     pygame.display.update()
 
 def mostrar_grafico(ventana, fuente, votos, mostrar_porcentajes=False):
+    print(f"Votos recibidos en mostrar_grafico: {votos}")  # Añadir impresión de depuración
     total = len(votos)
+    if total == 0:  # Verificar si hay votos para evitar división por cero
+        print("Error: No se han recibido votos.")
+        return
     votos_rojo = votos.count("Rojo")
     votos_azul = votos.count("Azul")
     porcentaje_rojo = (votos_rojo / total) * 100
