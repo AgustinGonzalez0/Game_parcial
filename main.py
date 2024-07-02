@@ -1,5 +1,4 @@
 # ejecucion del juego
-
 import pygame
 from game import start, game_data
 

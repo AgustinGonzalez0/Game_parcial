@@ -1,4 +1,3 @@
-from turtle import position
 import pygame
 import time
 from questions import obtener_preguntas
@@ -11,7 +10,7 @@ pygame.init()
 
 game_data = {
     'ventana': pygame.display.set_mode((800, 600)),  
-    'fuente': pygame.font.Font(None, 36),  
+    'fuente': pygame.font.Font(None, 25),  
     'comodines_usados': {"Next": False, "Half": False, "Reload": False}, 
     'nivel': 0,  
     'premio': 0, 
@@ -26,7 +25,7 @@ pygame.display.set_caption("ESTO O AQUELLO")
 def manejar_pregunta(game_data):
     while True:
         pregunta_actual = game_data['banco_preguntas'][game_data['nivel']]
-        if game_data['nivel'] not in game_data['preguntas_usadas']:
+        if game_data['nivel'] != game_data['preguntas_usadas']:
             break
         game_data['nivel'] += 1
 
@@ -71,7 +70,7 @@ def manejar_pregunta(game_data):
             break
 
     if decision == None:
-        print("Tiempo agotado. Fin del juego.")
+        print("se te termino el tiempo")
         return "timeout"
 
     if decision == "Next":
