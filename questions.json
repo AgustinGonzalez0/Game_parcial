@@ -1,0 +1,131 @@
+{
+    "banco_preguntas1" : [
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Pelearte con un oso", "Pelearte con un tigre"], "correcta": "Pelearte con un oso"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Comer pizza siempre", "Comer hamburguesas siempre"], "correcta": "Comer pizza todos los días"}, 
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Viajar al pasado", "Viajar al futuro"], "correcta": "Viajar al futuro"}, 
+        {"pregunta": "¿Qué preferirías?", "opciones": ["poder volar", "poder ser invisible"], "correcta": "Tener la habilidad de volar"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser millonario", "Ser famoso"], "correcta": "Ser increíblemente rico"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Vivir sin Internet", "Vivir sin televisión"], "correcta": "Vivir sin Internet"}, 
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Poder leer mentes", "Poder teletransportarte"], "correcta": "Ser capaz de teletransportarte"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Nunca tener que dormir", "Nunca tener que comer"], "correcta": "Nunca tener que dormir"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Tener un dragón de mascota", "Tener un unicornio de mascota"], "correcta": "Tener un dragón como mascota"}, 
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Poder hablar con los animales", "Poder hablar todos los idiomas"], "correcta": "Poder hablar todos los idiomas humanos"}
+    ],
+
+    "banco_preguntas2" : [
+        {"pregunta": "¿Qué preferirías?", "opciones": [" Poder volar", "Ser invisible"], "correcta": "Tener la capacidad de volar"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser extremadamente fuerte", "Ser extremadamente rápido"], "correcta": "Ser extremadamente fuerte"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Leer mentes", "Hablar con animales"], "correcta": "Leer mentes"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Viajar al pasado", "Viajar al futuro"], "correcta": "Viajar al futuro"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser famoso", "Ser rico"], "correcta": "Ser rico"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Nunca envejecer", "Nunca enfermar"], "correcta": "Nunca envejecer"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Vivir sin internet", "Vivir sin televisión"], "correcta": "Vivir sin internet"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Tener un dragón como mascota", "Tener un unicornio como mascota"], "correcta": "Tener un dragón como mascota"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Comer solo pizza", "Comer solo hamburguesas"], "correcta": "Comer solo pizza"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser un genio", "Ser extremadamente afortunado"], "correcta": "Ser extremadamente afortunado"}
+    ],
+
+    "banco_preguntas3" : [
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser un superhéroe", "Ser un villano"], "correcta": "Ser un superhéroe"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Viajar por el mundo gratis", "Tener comida gratis"], "correcta": "Viajar por el mundo gratis"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Tener una mansión", "Tener un yate"], "correcta": "Tener una mansión"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Poder hablar todos los idiomas", "Poder hablar con los animales"], "correcta": "Poder hablar todos los idiomas"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Tener un millón de dólares", "Tener un deseo"], "correcta": "Tener un deseo"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Tener telequinesis", "Tener telepatía"], "correcta": "Tener telequinesis"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser capaz de detener el tiempo", "Ser capaz de viajar en el tiempo"], "correcta": "Ser capaz de detener el tiempo"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Vivir en el espacio", "Vivir bajo el agua"], "correcta": "Vivir en el espacio"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser el mejor en tu trabajo", "Tener el trabajo de tus sueños"], "correcta": "Tener el trabajo de tus sueños"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Nunca volver a trabajar", "Nunca volver a estudiar"], "correcta": "Nunca volver a trabajar"}
+    ],
+
+    "banco_preguntas4" : [
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Poder volar", "Poder teletransportarte"], "correcta": "Poder teletransportarte"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser inmortal", "Tener tres deseos"], "correcta": "Tener tres deseos"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser famoso en vida", "Ser recordado después de la muerte"], "correcta": "Ser famoso en vida"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Tener el trabajo perfecto", "Tener la casa perfecta"], "correcta": "Tener el trabajo perfecto"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Comer solo dulces", "Comer solo salados"], "correcta": "Comer solo dulces"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser un líder", "Ser un seguidor"], "correcta": "Ser un líder"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Tener un coche de lujo", "Tener un avión privado"], "correcta": "Tener un avión privado"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Tener éxito profesional", "Tener éxito personal"], "correcta": "Tener éxito personal"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Vivir en la ciudad", "Vivir en el campo"], "correcta": "Vivir en la ciudad"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser una celebridad", "Ser un genio"], "correcta": "Ser un genio"}
+    ],
+
+    "banco_preguntas5" : [
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser el más inteligente", "Ser el más atractivo"], "correcta": "Ser el más inteligente"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Tener el poder de invisibilidad", "Tener el poder de la super fuerza"], "correcta": "Tener el poder de la super fuerza"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser extremadamente alto", "Ser extremadamente bajo"], "correcta": "Ser extremadamente alto"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Tener siempre frío", "Tener siempre calor"], "correcta": "Tener siempre calor"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Poder respirar bajo el agua", "Poder caminar sobre el agua"], "correcta": "Poder respirar bajo el agua"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Tener una memoria perfecta", "Tener una creatividad infinita"], "correcta": "Tener una creatividad infinita"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Vivir en una casa en el árbol", "Vivir en una cueva"], "correcta": "Vivir en una casa en el árbol"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Comer comida rápida gratis", "Tener boletos de avión gratis"], "correcta": "Tener boletos de avión gratis de por vida"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser increíblemente afortunado", "Ser increíblemente talentoso"], "correcta": "Ser increíblemente afortunado"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ganar la lotería", "Encontrar el amor verdadero"], "correcta": "Encontrar el amor verdadero"}
+    ],
+
+    "banco_preguntas6" : [
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser invisible", "Poder volar"], "correcta": "Poder volar"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser famoso", "Ser rico"], "correcta": "Ser rico"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Tener una super memoria", "Tener una super fuerza"], "correcta": "Tener una super memoria"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Nunca tener que comer", "Nunca tener que dormir"], "correcta": "Nunca tener que dormir"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Viajar al futuro", "Viajar al pasado"], "correcta": "Viajar al futuro"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser el mejor en todo", "Ser querido por todos"], "correcta": "Ser el mejor en todo"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Tener una mansión", "Tener un yate"], "correcta": "Tener una mansión"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Poder leer mentes", "Poder controlar mentes"], "correcta": "Poder controlar mentes"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser capaz de detener el tiempo", "Ser capaz de viajar en el tiempo"], "correcta": "Ser capaz de detener el tiempo"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Vivir sin música", "Vivir sin películas"], "correcta": "Vivir sin películas"}
+    ],
+
+    "banco_preguntas7" : [
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser un genio en matemáticas", "Ser un genio en arte"], "correcta": "Ser un genio en matemáticas"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Tener el doble de vida", "Tener el doble de dinero"], "correcta": "Tener el doble de vida"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser extremadamente atractivo", "Ser extremadamente inteligente"], "correcta": "Ser extremadamente inteligente"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Nunca tener que trabajar", "Nunca tener que dormir"], "correcta": "Nunca tener que trabajar"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Vivir para siempre", "Tener tres deseos"], "correcta": "Tener tres deseos"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser un maestro en todo", "Ser un aprendiz rápido en todo"], "correcta": "Ser un aprendiz rápido en todo"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser el centro de atención", "Poder desaparecer a voluntad"], "correcta": "Poder desaparecer a voluntad"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Tener una voz increíble", "Tener un cuerpo increíble"], "correcta": "Tener una voz increíble"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser un gran líder", "Ser un gran seguidor"], "correcta": "Ser un gran líder"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser famoso en tu país", "Ser famoso en el mundo"], "correcta": "Ser famoso en el mundo"}
+    ],
+
+    "banco_preguntas8" : [
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Vivir en la montaña", "Vivir en la playa"], "correcta": "Vivir en la playa"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser un astronauta", "Ser un piloto"], "correcta": "Ser un astronauta"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Tener una memoria perfecta", "Tener una creatividad infinita"], "correcta": "Tener una memoria perfecta"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser inmortal", "Ser increíblemente afortunado"], "correcta": "Ser increíblemente afortunado"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Vivir sin internet", "Vivir sin teléfono"], "correcta": "Vivir sin teléfono"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Tener un millón de dólares", "Tener una vida perfecta"], "correcta": "Tener una vida perfecta"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Poder volar", "Poder respirar bajo el agua"], "correcta": "Poder volar"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser un genio musical", "Ser un genio científico"], "correcta": "Ser un genio científico"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser extremadamente rápido", "Ser extremadamente fuerte"], "correcta": "Ser extremadamente rápido"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser famoso en vida", "Ser recordado después de la muerte"], "correcta": "Ser famoso en vida"}
+    ],
+
+    "banco_preguntas9" : [
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser capaz de leer mentes", "Ser capaz de ver el futuro"], "correcta": "Ser capaz de ver el futuro"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Tener una mansión en la ciudad", "Tener una casa en la playa"], "correcta": "Tener una casa en la playa"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Tener una vista increíble", "Tener un oído increíble"], "correcta": "Tener una vista increíble"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser el más popular", "Ser el más inteligente"], "correcta": "Ser el más inteligente"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Tener una vida sin preocupaciones", "Tener una vida sin aburrimiento"], "correcta": "Tener una vida sin preocupaciones"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser extremadamente fuerte", "Ser extremadamente flexible"], "correcta": "Ser extremadamente fuerte"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Tener el trabajo perfecto", "Tener la casa perfecta"], "correcta": "Tener el trabajo perfecto"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Poder volar", "Poder teletransportarse"], "correcta": "Poder teletransportarse"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Vivir en el pasado", "Vivir en el futuro"], "correcta": "Vivir en el futuro"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser un genio en matemáticas", "Ser un genio en arte"], "correcta": "Ser un genio en matemáticas"}
+    ],
+
+    "banco_preguntas10" : [
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Tener una super memoria", "Tener una super fuerza"], "correcta": "Tener una super memoria"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser famoso", "Ser rico"], "correcta": "Ser rico"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Poder leer mentes", "Poder controlar mentes"], "correcta": "Poder controlar mentes"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser capaz de detener el tiempo", "Ser capaz de viajar en el tiempo"], "correcta": "Ser capaz de detener el tiempo"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Tener una mansión", "Tener un yate"], "correcta": "Tener una mansión"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Ser increíblemente afortunado", "Ser increíblemente talentoso"], "correcta": "Ser increíblemente afortunado"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Vivir sin música", "Vivir sin películas"], "correcta": "Vivir sin películas"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Tener una memoria perfecta", "Tener una creatividad infinita"], "correcta": "Tener una creatividad infinita"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Tener boletos de avión gratis de por vida", "Comer comida rápida gratis de por vida"], "correcta": "Tener boletos de avión gratis de por vida"},
+        {"pregunta": "¿Qué preferirías?", "opciones": ["Tener el doble de vida", "Tener el doble de dinero"], "correcta": "Tener el doble de vida"}
+    ]
+}

@@ -33,7 +33,7 @@ def mostrar_grafico(ventana, fuente, votos, mostrar_porcentajes=False):
         texto_azul = fuente.render(f"{porcentaje_azul:.2f}%", True, BLANCO)
 
         ventana.blit(texto_rojo, (150, 500))
-        ventana.blit(texto_azul, (450, 500))
+        ventana.blit(texto_azul, (500, 500))
 
     pygame.display.update()
 
@@ -42,7 +42,7 @@ def mostrar_pregunta(ventana, fuente, pregunta, opciones):
     ventana.blit(escenario, (0, 0))
 
     texto_pregunta = fuente.render(pregunta, True, NEGRO)
-    ventana.blit(texto_pregunta, (313, 250))
+    ventana.blit(texto_pregunta, (345, 195))
 
     opcion_rojo_rect = pygame.Rect(50, 290, 295, 50)
     opcion_azul_rect = pygame.Rect(440, 290, 300, 50)

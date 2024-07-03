@@ -1,6 +1,7 @@
-# ejecucion del juego
+# ejecución del juego
 import pygame
 from game import start, game_data
+import json
 
 pygame.init()  # Inicializar Pygame
 

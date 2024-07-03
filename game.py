@@ -1,9 +1,9 @@
 import pygame
 import time
-from questions import obtener_preguntas
+from questions import banco_preguntas, get_random_pregunta
 from voting import generar_votos_con_posiciones, mostrar_2_votos
 import graficos
-from animaciones import *
+from animaciones import mostrar_animacion
 
 # Iniciar Pygame
 pygame.init()
@@ -15,17 +15,38 @@ game_data = {
     'nivel': 0,  
     'premio': 0, 
     'tiempo_maximo': 15,  
-    'banco_preguntas': obtener_preguntas(),  
+    'banco_preguntas': banco_preguntas,  
     'preguntas_usadas': set(),
     'premios': [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],  
 }
 
 pygame.display.set_caption("ESTO O AQUELLO")
 
+def respuesta_correcta(votos):
+    conteo_votos = {}
+    for voto in votos:
+        if voto in conteo_votos:
+            conteo_votos[voto] += 1
+        else:
+            conteo_votos[voto] = 1
+
+    voto_mas_frecuente = None
+    max_ocurrencias = 0
+    for voto, ocurrencias in conteo_votos.items():
+        if ocurrencias > max_ocurrencias:
+            max_ocurrencias = ocurrencias
+            voto_mas_frecuente = voto
+
+    return voto_mas_frecuente
+
+def mostrar_puntaje(ventana, fuente, puntaje):
+    texto_puntaje = fuente.render(f"Puntaje: ${puntaje}", True, (0, 0, 0))
+    ventana.blit(texto_puntaje, (10, 10))
+
 def manejar_pregunta(game_data):
     while True:
-        pregunta_actual = game_data['banco_preguntas'][game_data['nivel']]
-        if game_data['nivel'] != game_data['preguntas_usadas']:
+        pregunta_actual = get_random_pregunta()
+        if game_data['nivel'] not in game_data['preguntas_usadas']:
             break
         game_data['nivel'] += 1
 
@@ -33,6 +54,7 @@ def manejar_pregunta(game_data):
 
     graficos.mostrar_pregunta(game_data['ventana'], game_data['fuente'], pregunta_actual["pregunta"], pregunta_actual["opciones"])  # Mostrar la pregunta
     graficos.mostrar_grafico(game_data['ventana'], game_data['fuente'], votos)
+    mostrar_puntaje(game_data['ventana'], game_data['fuente'], game_data['premio'])
 
     boton_rojo = graficos.crear_boton(game_data['ventana'], game_data['fuente'], "Rojo", (255, 0, 0), (150, 400, 100, 50))  # botón rojo
     boton_azul = graficos.crear_boton(game_data['ventana'], game_data['fuente'], "Azul", (0, 0, 255), (550, 400, 100, 50))  # botón azul
@@ -69,8 +91,8 @@ def manejar_pregunta(game_data):
         if decision:
             break
 
-    if decision == None:
-        print("se te termino el tiempo")
+    if decision is None:
+        print("Se te terminó el tiempo")
         return "timeout"
 
     if decision == "Next":
@@ -78,25 +100,20 @@ def manejar_pregunta(game_data):
         return "next"
     elif decision == "Reload":
         return "reload"
-    elif decision == "Half" or decision == "Reload":
+    elif decision == "Half":
         return "retry"
     elif decision == "Rojo" or decision == "Azul":
-        respuesta_correcta = max(set(votos), key=votos.count)
+        respuesta = respuesta_correcta(votos)
 
         posiciones_azul = [pos for pos, voto in zip(posiciones, votos) if voto == "Azul"]
         posiciones_rojo = [pos for pos, voto in zip(posiciones, votos) if voto == "Rojo"]
 
-        if decision == "Azul":
-            for pos in posiciones_azul:
-                mostrar_animacion_azul(game_data['ventana'], pos)
-        elif decision == "Rojo":
-            for pos in posiciones_rojo:
-                mostrar_animacion_roja(game_data['ventana'], pos)
+        mostrar_animacion(game_data['ventana'], posiciones_rojo, posiciones_azul)
 
         graficos.mostrar_grafico(game_data['ventana'], game_data['fuente'], votos, mostrar_porcentajes=True)
         time.sleep(5)  
 
-        if decision == respuesta_correcta:
+        if decision == respuesta:
             print("¡Correcto!")
             return "correct"
         else:
@@ -124,9 +141,13 @@ def start():
             game_data['nivel'] += 1
             game_data['premio'] += game_data['premios'][game_data['nivel'] - 1]
 
+        game_data['ventana'].fill((0, 0, 0))  # Limpiar la pantalla
+        mostrar_puntaje(game_data['ventana'], game_data['fuente'], game_data['premio'])
+        graficos.mostrar_escenario(game_data['ventana'])  # Volver a dibujar el escenario
+
         print(f"Premio total: ${game_data['premio']}")
 
-    pygame.quit()
+    print(f"Juego terminado. Premio final: ${game_data['premio']}")
 
 if __name__ == "__main__":
     start()

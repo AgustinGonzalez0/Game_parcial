@@ -45,18 +45,13 @@ def draw_button(screen, color, rect, text):
     text_rect = text_surf.get_rect(center=rect.center)
     screen.blit(text_surf, text_rect)
 
-def mostrar_animacion_azul(screen, posiciones):
+def mostrar_animacion(screen, posiciones_rojas, posiciones_azules):
     for _ in range(5):  # Mostrar 5 ciclos de animación
-        frame = int(time.time() * 5) % len(voto_azul)
-        for posicion in posiciones:
-            screen.blit(voto_azul[frame], posiciones)
-        pygame.display.update()
-        time.sleep(0.1)
-
-def mostrar_animacion_roja(screen, posiciones):
-    for _ in range(5):  # Mostrar 5 ciclos de animación
-        frame = int(time.time() * 5) % len(voto_rojo)
-        for posicion in posiciones:
-            screen.blit(voto_rojo[frame], posiciones)
+        frame_rojo = int(time.time() * 5) % len(voto_rojo)
+        frame_azul = int(time.time() * 5) % len(voto_azul)
+        for posicion in posiciones_rojas:
+            screen.blit(voto_rojo[frame_rojo], posicion)
+        for posicion in posiciones_azules:
+            screen.blit(voto_azul[frame_azul], posicion)
         pygame.display.update()
         time.sleep(0.1)

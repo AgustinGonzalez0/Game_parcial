@@ -1,6 +1,6 @@
 import random
 import pygame
-from animaciones import mostrar_animacion_azul, mostrar_animacion_roja
+from animaciones import *
 
 posicion_1 = (150, 500)
 posicion_2 = (250, 500)
@@ -22,15 +22,17 @@ def generar_votos_con_posiciones():
     return votos, posiciones[:len(votos)]
 
 def mostrar_2_votos(votos, ventana, fuente):
-    texto = f"Rojo: {votos.count('Rojo')}, Azul: {votos.count('Azul')}"
-    print(texto)  # Añadir impresión de depuración
-    texto_votos = fuente.render(texto, True, (0, 0, 0))
-    ventana.blit(texto_votos, (100, 100))
-    pygame.display.update()
+    # Seleccionar dos votos aleatorios
+    if len(votos) < 2:
+        return
 
-def mostrar_animacion_votos(votantes, ventana):
-    for i, votante in enumerate(votantes):
-        if votante['decision'] == "Azul":
-            mostrar_animacion_azul(ventana, posiciones[i])
-        else:
-            mostrar_animacion_roja(ventana, posiciones[i])
+    votos_mostrados = random.sample(votos, 2)
+
+    # Calcular las posiciones para los votos seleccionados
+    posiciones_mostradas = [(150, 120 + i * 50) for i in range(2)]
+
+    for voto, posicion in zip(votos_mostrados, posiciones_mostradas):
+        texto = fuente.render(voto, True, (0, 0, 0))
+        ventana.blit(texto, posicion)
+
+    pygame.display.update()
