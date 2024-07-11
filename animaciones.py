@@ -14,7 +14,7 @@ RED = (255, 0, 0)
 
 # Configurar la pantalla
 screen = pygame.display.set_mode((800, 600))
-pygame.display.set_caption("Animación de Votos")
+pygame.display.set_caption("Animación de Votos".title())
 
 # Fuente para el texto del botón
 font = pygame.font.Font(None, 36)

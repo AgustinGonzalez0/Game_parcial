@@ -7,7 +7,7 @@ AZUL = (0, 0, 255)
 BLANCO = (255, 255, 255)
 
 # Cargar y escalar la imagen del escenario
-escenario = pygame.image.load('_829b3046-c7bc-481e-b6fa-1d5eb27da4fd.png')
+escenario = pygame.image.load('wallpaperbetter.com_800x600.jpg')
 escenario = pygame.transform.scale(escenario, (800, 800))
 
 def mostrar_escenario(ventana):
