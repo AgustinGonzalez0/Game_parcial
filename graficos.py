@@ -5,9 +5,12 @@ NEGRO = (0, 0, 0)
 ROJO = (255, 0, 0)
 AZUL = (0, 0, 255)
 BLANCO = (255, 255, 255)
+NAVY_BLUE = (0, 0, 128)
+AQUA = (0, 255, 255)
+GRAY = (128, 128, 128)
 
 # Cargar y escalar la imagen del escenario
-escenario = pygame.image.load('wallpaperbetter.com_800x600.jpg')
+escenario = pygame.image.load('wallpaperbetter.com_800x600_1.jpg')
 escenario = pygame.transform.scale(escenario, (800, 800))
 
 def mostrar_escenario(ventana):
@@ -22,19 +25,6 @@ def mostrar_grafico(ventana, fuente, votos, mostrar_porcentajes=False):
         return
     votos_rojo = votos.count("Rojo")
     votos_azul = votos.count("Azul")
-    porcentaje_rojo = (votos_rojo / total) * 100
-    porcentaje_azul = (votos_azul / total) * 100
-
-    pygame.draw.rect(ventana, ROJO, (150, 500, 200, 30))
-    pygame.draw.rect(ventana, AZUL, (450, 500, 200, 30))
-
-    if mostrar_porcentajes:
-        texto_rojo = fuente.render(f"{porcentaje_rojo:.2f}%", True, BLANCO)
-        texto_azul = fuente.render(f"{porcentaje_azul:.2f}%", True, BLANCO)
-
-        ventana.blit(texto_rojo, (150, 500))
-        ventana.blit(texto_azul, (500, 500))
-
     pygame.display.update()
 
 def mostrar_pregunta(ventana, fuente, pregunta, opciones):

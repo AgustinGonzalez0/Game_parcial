@@ -1,72 +1,45 @@
 import pygame
+import game
 
 pygame.init()
-
-# Cargar la imagen de fondo
-fondo_menu = pygame.image.load('wallpaperbetter.com_800x600_1.jpg')
-
-def mostrar_fondo_menu(ventana):
-    ventana.blit(fondo_menu, (0, 0))
+ventana = pygame.display.set_mode((800, 600))
+pygame.display.set_caption("Menu Principal")
 
 def menu_principal():
-    ventana = pygame.display.set_mode((800, 600))
-    pygame.display.set_caption("ESTO O AQUELLO")
-    fuente = pygame.font.Font(None, 50)
-    reloj = pygame.time.Clock()
+    fondo_menu = pygame.image.load("wallpaperbetter.com_800x600_1.jpg")
+    pygame.mixer.music.load("img_aud/Y2meta.app - Jujutsu Kaisen ; OP.4 (TV Size) _ Specialz _ Sub. Español & Romaji (AMV) (128 kbps).mp3")
+    pygame.mixer.music.play(-1)
 
-    botones = [
-        pygame.Rect(300, 200, 200, 50),  # Iniciar
-        pygame.Rect(300, 300, 200, 50)   # Salir
-    ]
-    textos = ["Iniciar", "Salir"]
+    fuente = pygame.font.Font(None, 74)
+    opciones = ["Iniciar", "Salir"]
+    seleccionado = 0
 
-    indice_seleccionado = 0
+    while True:
+        ventana.blit(fondo_menu, (0, 0))
 
-    corriendo = True
-    while corriendo:
         for evento in pygame.event.get():
             if evento.type == pygame.QUIT:
-                return "quit"
-            if evento.type == pygame.MOUSEBUTTONDOWN:
-                for i, boton in enumerate(botones):
-                    if boton.collidepoint(evento.pos):
-                        if i == 0:
-                            return "iniciar"
-                        elif i == 1:
-                            return "quit"
+                pygame.quit()
+                return
+
             if evento.type == pygame.KEYDOWN:
-                if evento.key == pygame.K_DOWN:
-                    indice_seleccionado = (indice_seleccionado + 1) % len(botones)
-                elif evento.key == pygame.K_UP:
-                    indice_seleccionado = (indice_seleccionado - 1) % len(botones)
+                if evento.key == pygame.K_UP:
+                    seleccionado = (seleccionado - 1) % len(opciones)
+                elif evento.key == pygame.K_DOWN:
+                    seleccionado = (seleccionado + 1) % len(opciones)
                 elif evento.key == pygame.K_RETURN:
-                    if indice_seleccionado == 0:
-                        return "iniciar"
-                    elif indice_seleccionado == 2:
-                        return "quit"
+                    if opciones[seleccionado] == "Iniciar":
+                        game.start()
+                        return  # Salir del bucle del menú para iniciar el juego
+                    elif opciones[seleccionado] == "Salir":
+                        pygame.quit()
+                        return
 
-        # Mostrar el fondo del menú
-        mostrar_fondo_menu(ventana)
-
-        # Obtener la posición del ratón
-        pos_raton = pygame.mouse.get_pos()
-
-        # Función para dibujar botones con colores dinámicos
-        def dibujar_boton(boton, texto, pos_texto, seleccionado):
-            if boton.collidepoint(pos_raton) or seleccionado:
-                pygame.draw.rect(ventana, (255, 255, 255), boton)
-                texto_render = fuente.render(texto, True, (0, 0, 0))
+        for i, opcion in enumerate(opciones):
+            if i == seleccionado:
+                texto = fuente.render(opcion, True, (255, 0, 0))
             else:
-                pygame.draw.rect(ventana, (0, 0, 0), boton)
-                texto_render = fuente.render(texto, True, (255, 255, 255))
-            ventana.blit(texto_render, pos_texto)
+                texto = fuente.render(opcion, True, (0, 0, 0))
+            ventana.blit(texto, (300, 200 + i * 100))
 
-        # Dibujar los botones
-        for i, boton in enumerate(botones):
-            seleccionado = (i == indice_seleccionado)
-            dibujar_boton(boton, textos[i], (boton.x + 50, boton.y + 10), seleccionado)
         pygame.display.flip()
-        reloj.tick(60)
-
-if __name__ == "__main__":
-    menu_principal()
