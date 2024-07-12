@@ -33,7 +33,7 @@ El juego está diseñado para ser desafiante y entretenido, ofreciendo una combi
 ![image](https://github.com/user-attachments/assets/af359e28-0e6b-4675-8d2e-0b1eeb444420)
 
 ## Captura de la pantalla de Victoria:
-
+![image](https://github.com/user-attachments/assets/e11ddb30-172f-4e4e-92b9-6f2b03978d27)
 
 
 
