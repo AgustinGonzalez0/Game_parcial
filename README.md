@@ -26,5 +26,12 @@ El proyecto es una versión personalizada del juego "This or That". El objetivo 
 ## Experiencia del Jugador
 El juego está diseñado para ser desafiante y entretenido, ofreciendo una combinación de preguntas variadas y un sistema de comodines que permite a los jugadores utilizar estrategias diferentes. El uso del temporizador añade una capa de tensión y urgencia, aumentando la emoción de cada partida. Los diferentes escenarios y sonidos de ambiente crean una atmósfera atractiva que invita al jugador a continuar jugando y mejorando su puntuación.
 
+## Captura de la interfaz de juego:
+![image](https://github.com/user-attachments/assets/f06af55e-4e99-4106-bd72-481074f60ab9)
+
+## Captura de la pantalla de Game Over:
+
+
+
 
 
